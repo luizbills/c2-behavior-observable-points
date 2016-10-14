@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<c2addon>
+	<!-- One of: plugin, behavior, effect -->
+	<type>behavior</type>
+
+	<name>Observable Points</name>
+	<version>0.1</version>
+	<author>Luiz P. "Bills"</author>
+	<website>https://www.github.com/luizbills/c2-behavior-observable-points</website>
+	<documentation>https://www.github.com/luizbills/c2-behavior-observable-points</documentation>
+	<description>A behavior that stores float values and trigger events when they changes.</description>
+</c2addon>
