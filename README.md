@@ -11,6 +11,10 @@ Very useful for implementing *Hit Points*, *Magic Points*, *Movement Speed* and 
 
 Download the [latest version of the behavior](#), then drag and drop the `.c2addon` file in to your Construct 2 window. Construct 2 will prompt to ask if you want to install the behavior. If you approve the install, you must restart Construct 2 before the behavior becomes available.
 
+## Documentation
+
+Read the [documentation](#) and/or download the [our project used for tests](#) (you must install the addon first).
+
 ## LICENSE
 
 MIT

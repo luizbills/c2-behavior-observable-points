@@ -4,8 +4,8 @@
 		"id":			"ObservablePoints",
 		"version":		"0.1",
 		"description":	"A behavior that stores float values and trigger events when they changes.",
-		"author":		"Luiz P. \"Bills\"",
-		"help url":		"https://www.github.com/luizbills/c2-behavior-observable-points",
+		"author":		"Luiz P. Bills",
+		"help url":		"https://git.io/c2-behavior-observable-points",
 		"category":		"General",
 		"flags":		0
 	};

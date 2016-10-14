@@ -1,3 +1,5 @@
 *.c2addon
+
+# don't push the backup files
 *.autosave
 *.backup*
