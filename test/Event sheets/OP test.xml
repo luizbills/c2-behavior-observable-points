@@ -306,6 +306,12 @@
                     <param id="2" name="Tag">&quot;set_value&quot;</param>
                     <param id="3" name="Trigger this change">1</param>
                 </action>
+                <action id="5" name="Set frame" sid="362268818585605" type="Player">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action behavior="Timer" id="1" name="Stop timer" sid="521162732996203" type="Player">
+                    <param id="0" name="Tag">&quot;change_back&quot;</param>
+                </action>
                 <action id="0" name="Call function" sid="246200886442017" type="Function">
                     <param id="0" name="Name">&quot;log&quot;</param>
                     <param id="1" name="Parameter {n}">&quot;RESETED ATTRIBUTES TO DEFAULT VALUES!&quot;{###}1</param>
