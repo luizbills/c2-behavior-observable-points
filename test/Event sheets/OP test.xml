@@ -6,7 +6,7 @@
         <event-block sid="3808485175705828">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="2583647324939092" type="System">
-                    <param id="0" name="Interval (seconds)">0.2</param>
+                    <param id="0" name="Interval (seconds)">0.5</param>
                 </condition>
             </conditions>
             <actions>
@@ -16,78 +16,42 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="710537044795448">
+        <event-block sid="666951959270323">
             <conditions>
-                <condition behavior="ObservablePoints" id="1" name="On value change" sid="4636334697602053" type="Player">
+                <condition behavior="ObservablePoints" id="1" name="On value change" sid="422678278897199" type="Player">
                     <param id="0" name="Attribute">0</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Call function" sid="6627580338899634" type="Function">
+                <action id="0" name="Call function" sid="563543771903377" type="Function">
                     <param id="0" name="Name">&quot;log&quot;</param>
-                    <param id="1" name="Parameter {n}">Player.ObservablePoints.TriggerAction &amp; &quot;: &quot; &amp; Player.ObservablePoints.TriggerValue</param>
-                </action>
-                <action id="0" name="Call function" sid="9151057382716869" type="Function">
-                    <param id="0" name="Name">&quot;log&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;attribute: &quot; &amp; Player.ObservablePoints.TriggerAttribute</param>
-                </action>
-                <action id="0" name="Call function" sid="9038825933330107" type="Function">
-                    <param id="0" name="Name">&quot;log&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;changed: &quot; &amp; Player.ObservablePoints.ChangedValue</param>
-                </action>
-                <action id="0" name="Call function" sid="1289146845877329" type="Function">
-                    <param id="0" name="Name">&quot;log&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;tag: &quot; &amp; Player.ObservablePoints.TriggerTag{###}1</param>
+                    <param id="1" name="Parameter {n}">&quot;current changed&quot;</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="6641629609187445">
+        <event-block sid="257590815921173">
             <conditions>
-                <condition behavior="ObservablePoints" id="1" name="On value change" sid="3928644804218349" type="Player">
+                <condition behavior="ObservablePoints" id="1" name="On value change" sid="810894607863292" type="Player">
                     <param id="0" name="Attribute">1</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Call function" sid="6894799686991352" type="Function">
+                <action id="0" name="Call function" sid="576803736121636" type="Function">
                     <param id="0" name="Name">&quot;log&quot;</param>
-                    <param id="1" name="Parameter {n}">Player.ObservablePoints.TriggerAction &amp; &quot;: &quot; &amp; Player.ObservablePoints.TriggerValue</param>
-                </action>
-                <action id="0" name="Call function" sid="6261494896576229" type="Function">
-                    <param id="0" name="Name">&quot;log&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;attribute: &quot; &amp; Player.ObservablePoints.TriggerAttribute</param>
-                </action>
-                <action id="0" name="Call function" sid="7556689987596317" type="Function">
-                    <param id="0" name="Name">&quot;log&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;changed: &quot; &amp; Player.ObservablePoints.ChangedValue</param>
-                </action>
-                <action id="0" name="Call function" sid="6817474114645668" type="Function">
-                    <param id="0" name="Name">&quot;log&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;tag: &quot; &amp; Player.ObservablePoints.TriggerTag{###}1</param>
+                    <param id="1" name="Parameter {n}">&quot;minimum changed&quot;</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="7928996639145909">
+        <event-block sid="687349416656525">
             <conditions>
-                <condition behavior="ObservablePoints" id="1" name="On value change" sid="115750204000498" type="Player">
+                <condition behavior="ObservablePoints" id="1" name="On value change" sid="647510027224460" type="Player">
                     <param id="0" name="Attribute">2</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Call function" sid="8137676788814761" type="Function">
+                <action id="0" name="Call function" sid="270902004891735" type="Function">
                     <param id="0" name="Name">&quot;log&quot;</param>
-                    <param id="1" name="Parameter {n}">Player.ObservablePoints.TriggerAction &amp; &quot;: &quot; &amp; Player.ObservablePoints.TriggerValue</param>
-                </action>
-                <action id="0" name="Call function" sid="2106995495417199" type="Function">
-                    <param id="0" name="Name">&quot;log&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;attribute: &quot; &amp; Player.ObservablePoints.TriggerAttribute</param>
-                </action>
-                <action id="0" name="Call function" sid="5227766344473889" type="Function">
-                    <param id="0" name="Name">&quot;log&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;changed: &quot; &amp; Player.ObservablePoints.ChangedValue</param>
-                </action>
-                <action id="0" name="Call function" sid="7809959576521784" type="Function">
-                    <param id="0" name="Name">&quot;log&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;tag: &quot; &amp; Player.ObservablePoints.TriggerTag{###}1</param>
+                    <param id="1" name="Parameter {n}">&quot;maximum changed&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -102,46 +66,67 @@
                 <action id="5" name="Set frame" sid="8962780064764057" type="Player">
                     <param id="0" name="Frame number">1</param>
                 </action>
-                <action behavior="Timer" id="0" name="Start timer" sid="5070568914441581" type="Player">
-                    <param id="0" name="Duration">0.5</param>
-                    <param id="1" name="Type">0</param>
-                    <param id="2" name="Tag">&quot;change_back&quot;</param>
-                </action>
             </actions>
         </event-block>
-        <event-block sid="4444127266712017">
+        <event-block sid="177131318208410">
             <conditions>
-                <condition behavior="ObservablePoints" id="2" name="On value change (with tag)" sid="2441786712495713" type="Player">
+                <condition behavior="ObservablePoints" id="2" name="On value change (with tag)" sid="181016750292259" type="Player">
                     <param id="0" name="Attribute">1</param>
                     <param id="1" name="Tag">&quot;Set_value&quot;</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="5" name="Set frame" sid="4307538799643104" type="Player">
-                    <param id="0" name="Frame number">1</param>
+                <action id="5" name="Set frame" sid="772746128146936" type="Player">
+                    <param id="0" name="Frame number">2</param>
                 </action>
-                <action behavior="Timer" id="0" name="Start timer" sid="6921080190193035" type="Player">
+            </actions>
+        </event-block>
+        <event-block sid="773646302359713">
+            <conditions>
+                <condition behavior="ObservablePoints" id="2" name="On value change (with tag)" sid="617056254359630" type="Player">
+                    <param id="0" name="Attribute">2</param>
+                    <param id="1" name="Tag">&quot;Set_value&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="673293196135453" type="Player">
+                    <param id="0" name="Frame number">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="522992189388064">
+            <conditions>
+                <condition behavior="ObservablePoints" id="2" name="On value change (with tag)" sid="988950245912011" type="Player">
+                    <param id="0" name="Attribute">3</param>
+                    <param id="1" name="Tag">&quot;Set_value&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Timer" id="0" name="Start timer" sid="672061585044512" type="Player">
                     <param id="0" name="Duration">0.5</param>
                     <param id="1" name="Type">0</param>
                     <param id="2" name="Tag">&quot;change_back&quot;</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="3515776480822955">
+        <event-block sid="710537044795448">
             <conditions>
-                <condition behavior="ObservablePoints" id="2" name="On value change (with tag)" sid="9516668709699423" type="Player">
-                    <param id="0" name="Attribute">2</param>
-                    <param id="1" name="Tag">&quot;Set_value&quot;</param>
+                <condition behavior="ObservablePoints" id="1" name="On value change" sid="4636334697602053" type="Player">
+                    <param id="0" name="Attribute">3</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="5" name="Set frame" sid="8393152823903667" type="Player">
-                    <param id="0" name="Frame number">1</param>
+                <action id="0" name="Call function" sid="6627580338899634" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">Player.ObservablePoints.TriggerAction &amp; &quot;: &quot; &amp; Player.ObservablePoints.TriggerValue</param>
                 </action>
-                <action behavior="Timer" id="0" name="Start timer" sid="4799410302571192" type="Player">
-                    <param id="0" name="Duration">0.5</param>
-                    <param id="1" name="Type">0</param>
-                    <param id="2" name="Tag">&quot;change_back&quot;</param>
+                <action id="0" name="Call function" sid="9038825933330107" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;changed: &quot; &amp; Player.ObservablePoints.ChangedValue</param>
+                </action>
+                <action id="0" name="Call function" sid="1289146845877329" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;tag: &quot; &amp; Player.ObservablePoints.TriggerTag{###}1</param>
                 </action>
             </actions>
         </event-block>

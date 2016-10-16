@@ -210,7 +210,7 @@
                                 <initial-value>25</initial-value>
                                 <initial-value-mode>Percent</initial-value-mode>
                                 <min-value>0</min-value>
-                                <max-value>8500</max-value>
+                                <max-value>300</max-value>
                                 <enable-min--max>Both</enable-min--max>
                             </properties>
                         </behavior-instance>
