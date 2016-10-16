@@ -13,7 +13,7 @@ Download the [latest version of the behavior](#), then drag and drop the `.c2add
 
 ## Documentation
 
-Read the [documentation](#) and/or download the [our project used for tests](#) (you must install the addon first).
+Read the [documentation](#) or clone this repository and open *our project used for tests* inside of folder `test` (you must install the addon first).
 
 ## LICENSE
 
