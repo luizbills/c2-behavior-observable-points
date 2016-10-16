@@ -21,13 +21,13 @@ Compare a attribute value.
 
 `trigger`
 
-Triggered when a attribute value is changed using *any* tag. *This trigger will be ever Triggered*.
+Triggered when a attribute value is changed using *any* tag.
 
 ### On value change (with tag)
 
 `trigger`
 
-Triggered when a attribute value is changed using a determined tag.
+Triggered when a attribute value is changed using a *determined* tag.
 
 ### Is applying changes
 
@@ -51,9 +51,9 @@ Subtract from a attribute value.
 
 Set whether to apply the value changes (in any attribute).
 
-> Note: this action is not a just `boolean/flag`, it is a *counter*. The option "Stop applying changes" of this action increment this counter by 1 and the option "Start applying changes" decrement by 1. If this counter is greater than 1 no changes will be applied, but it yet will be triggered.
+> Note: this action is not a just `boolean/flag`, it is a *counter*. The option "Stop applying changes" of this action increment this counter by 1 and the option "Start applying changes" decrement by 1. If this counter is greater than or equal 1 no changes will be applied, but it yet will be triggered.
 
-> Example: if you used this action with `Stop applying changes` 2 times then you will need to use this action with `Start applying changes` 2 times too for **really restart applying value changes**.
+> Example: if you used this action as `Stop applying changes` 2 times then you will need to use this action as `Start applying changes` 2 times too for **really restart applying value changes**.
 
 > For more informations: start the **Construct 2 Debugger** and check the property *Applying Changes Counter*.
 
@@ -69,19 +69,19 @@ The current value.
 
 `float`
 
-The minimum value.
+The minimum value allowed for the *current value*.
 
 ### `MaxValue`
 
 `float`
 
-The maximum value.
+The maximum value allowed for the *current value*.
 
 ### `ChangedValue`
 
 `float`
 
-The value that really has changed in the last change. *Use it inside a trigger "On value change"*.
+The value that really has changed in the last change. **Don't use it outside a trigger "On value change"**.
 
 > Example: You use a action `Add` to **add 25** in the **current value** of a Observable Points called *HitPoints* (just a example). The **current value** of the *HitPoints* is 92 and the **maximum value** is 100. After the action, the **current value** will be 100 (because of the maximum limit) and in the trigger emited/fired by this change, the expression `ChangedValue` will returns 8. Result of 100 (new value) minus 92 (old value).
 
@@ -89,7 +89,7 @@ The value that really has changed in the last change. *Use it inside a trigger "
 
 `float`
 
-The value *used* to the last change. *Use it inside a trigger "On value change"*.
+The value *used* to the last change. **Don't use it outside a trigger "On value change"**.
 
 > In the example above, the expression `TriggerValue` returns 25.
 
@@ -97,7 +97,7 @@ The value *used* to the last change. *Use it inside a trigger "On value change"*
 
 `string`
 
-The name of last changed attribute. *Use it inside a trigger "On value change"*.
+The name of last changed attribute. **Don't use it outside a trigger "On value change"**.
 
 > Returns:
 
@@ -111,7 +111,7 @@ The name of last changed attribute. *Use it inside a trigger "On value change"*.
 
 `string`
 
-The tag used in the last change. *Use it inside a  trigger "On value change"*.
+The tag used in the last change. **Don't use it outside a trigger "On value change"**.
 
 > Returns `""` (empty string) when the tag is not used in the action.
 
@@ -119,11 +119,11 @@ The tag used in the last change. *Use it inside a  trigger "On value change"*.
 
 `string`
 
-The name of the action used to the last change. *Use it inside a trigger "On value change"*.
+The name of the action used to the last change. **Don't use it outside a trigger "On value change"**.
 
 > Returns: `"set"`, `"add"` or `"subtract"`.
 
-## Behavior Editor Properties
+## IDE/Editor Properties
 
 ### Initial value
 
