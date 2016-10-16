@@ -13,13 +13,11 @@
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
-        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Luiz P. Bills" id="ObservablePoints" version="0.100000001">Observable Points</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
@@ -55,9 +53,6 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-        <object-type name="Mouse" sid="7754004601542471">
-            <plugin id="Mouse" />
-        </object-type>
         <object-type name="Platform" sid="627229213468679">
             <plugin id="Sprite" />
             <behaviors>
@@ -74,7 +69,7 @@
         <object-type name="Player" sid="4306139700368336">
             <plugin id="Sprite" />
             <behaviors>
-                <behavior-type name="PlatformX" sid="8490181484699738">
+                <behavior-type name="Platform" sid="8490181484699738">
                     <behavior id="Platform" />
                 </behavior-type>
                 <behavior-type name="ScrollTo" sid="1626588777780115">
@@ -86,7 +81,7 @@
                 <behavior-type name="Timer" sid="5897021064279184">
                     <behavior id="Timer" />
                 </behavior-type>
-                <behavior-type name="HitPoints" sid="3150282164184973">
+                <behavior-type name="ObservablePoints" sid="3150282164184973">
                     <behavior id="ObservablePoints" />
                 </behavior-type>
             </behaviors>
@@ -97,35 +92,8 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Bullet" sid="3020706346636753">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Bullet" sid="4017531640877064">
-                    <behavior id="Bullet" />
-                </behavior-type>
-                <behavior-type name="Timer" sid="3381371103150015">
-                    <behavior id="Timer" />
-                </behavior-type>
-                <behavior-type name="Wrap" sid="8963000608526816">
-                    <behavior id="wrap" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3641057849263375" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\LUIZ\path3336.png" />
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="Keyboard" sid="3888047480470824">
             <plugin id="Keyboard" />
-        </object-type>
-        <object-type name="SpriteMouse" sid="7626716734602407">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1882245608837165" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
         </object-type>
         <object-type name="Browser" sid="2663611705554918">
             <plugin id="Browser" />
@@ -153,7 +121,6 @@
         <event-sheet>OP test.xml</event-sheet>
     </event-folder>
     <global-instances>
-        <global-instance type="Mouse" uid="3" />
         <global-instance type="Keyboard" uid="12" />
         <global-instance type="Browser" uid="16" />
         <global-instance type="Function" uid="7" />

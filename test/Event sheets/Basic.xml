@@ -12,7 +12,7 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="PlatformX" id="7" name="Simulate control" sid="639039343216823" type="Player">
+                        <action behavior="Platform" id="7" name="Simulate control" sid="639039343216823" type="Player">
                             <param id="0" name="Control">1</param>
                         </action>
                         <action id="7" name="Set mirrored" sid="1453142293934158" type="Player">
@@ -27,7 +27,7 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="PlatformX" id="7" name="Simulate control" sid="3840577151652498" type="Player">
+                        <action behavior="Platform" id="7" name="Simulate control" sid="3840577151652498" type="Player">
                             <param id="0" name="Control">0</param>
                         </action>
                         <action id="7" name="Set mirrored" sid="6317221400766045" type="Player">
@@ -45,63 +45,11 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="PlatformX" id="7" name="Simulate control" sid="4370110078813441" type="Player">
+                        <action behavior="Platform" id="7" name="Simulate control" sid="4370110078813441" type="Player">
                             <param id="0" name="Control">2</param>
                         </action>
-                        <action behavior="PlatformX" id="7" name="Simulate control" sid="3090928478807939" type="Player">
+                        <action behavior="Platform" id="7" name="Simulate control" sid="3090928478807939" type="Player">
                             <param id="0" name="Control">2</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="4912775149404572">
-                    <conditions>
-                        <condition id="0" name="On click" sid="9658510200400455" type="Mouse">
-                            <param id="0" name="Mouse button">0</param>
-                            <param id="1" name="Click type">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="7050655960565239" type="Player">
-                            <param id="0" name="Object">Bullet</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="Image point">0</param>
-                        </action>
-                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="8187801241421422" type="Bullet">
-                            <param id="0" name="Angle">angle(Player.X, Player.Y, Mouse.X, Mouse.Y)</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="4747269097147826">
-                    <conditions>
-                        <condition id="-18" name="On created" sid="5136787032711445" type="Bullet" />
-                    </conditions>
-                    <actions>
-                        <action behavior="Timer" id="0" name="Start timer" sid="3114836392736491" type="Bullet">
-                            <param id="0" name="Duration">1</param>
-                            <param id="1" name="Type">0</param>
-                            <param id="2" name="Tag">&quot;destroy&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="9718118946515304">
-                    <conditions>
-                        <condition behavior="Timer" id="0" name="On timer" sid="4719071133774421" type="Bullet">
-                            <param id="0" name="Tag">&quot;destroy&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="9420026193023515" type="Bullet" />
-                    </actions>
-                </event-block>
-                <event-block sid="8491964457996608">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" sid="9214403339986266" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="6918413879362541" type="Bullet" />
-                        <action id="-9" name="Destroy" sid="7645033774930442" type="SpriteMouse" />
-                        <action id="1" name="Set cursor from sprite" sid="9197180348588473" type="Mouse">
-                            <param id="0" name="Sprite">SpriteMouse</param>
                         </action>
                     </actions>
                 </event-block>
@@ -124,6 +72,30 @@
                 <variable constant="0" name="param_cur" sid="3049227631162391" static="0" type="text"></variable>
                 <variable constant="0" name="param_min" sid="5263214739270682" static="0" type="text"></variable>
                 <variable constant="0" name="param_max" sid="5484202996440019" static="0" type="text"></variable>
+                <event-block sid="3641326480045377">
+                    <conditions>
+                        <condition id="0" name="On function" sid="5579195198732919" type="Function">
+                            <param id="0" name="Name">&quot;updateOPText&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9501180109094955" type="System">
+                            <param id="0" name="Variable">param_cur</param>
+                            <param id="1" name="Value">Player.ObservablePoints.CurrentValue</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="487054891424729" type="System">
+                            <param id="0" name="Variable">param_min</param>
+                            <param id="1" name="Value">Player.ObservablePoints.MinValue</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4285681793399182" type="System">
+                            <param id="0" name="Variable">param_max</param>
+                            <param id="1" name="Value">Player.ObservablePoints.MaxValue</param>
+                        </action>
+                        <action id="0" name="Set text" sid="2163389265535791" type="text_OP">
+                            <param id="0" name="Text">&quot;current: &quot; &amp; param_cur &amp; &quot; - min: &quot; &amp; param_min &amp; &quot; - max: &quot; &amp; param_max</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="5264353995276671">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="5317279552162743" type="System" />
@@ -135,34 +107,49 @@
                         </action>
                     </actions>
                 </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="7819971720175121" title="function log (string content, bool putLine) : void">
+            <sub-events>
+                <variable constant="0" name="param_content" sid="1233375409311435" static="0" type="text"></variable>
                 <event-block sid="3641326480045377">
                     <conditions>
                         <condition id="0" name="On function" sid="5579195198732919" type="Function">
-                            <param id="0" name="Name">&quot;updateOPText&quot;</param>
+                            <param id="0" name="Name">&quot;log&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="9501180109094955" type="System">
-                            <param id="0" name="Variable">param_cur</param>
-                            <param id="1" name="Value">Player.HitPoints.CurrentValue</param>
+                        <action id="-9" name="Set value" sid="8844829487965363" type="System">
+                            <param id="0" name="Variable">param_content</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
                         </action>
-                        <action id="-9" name="Set value" sid="487054891424729" type="System">
-                            <param id="0" name="Variable">param_min</param>
-                            <param id="1" name="Value">Player.HitPoints.MinValue</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="4285681793399182" type="System">
-                            <param id="0" name="Variable">param_max</param>
-                            <param id="1" name="Value">Player.HitPoints.MaxValue</param>
-                        </action>
-                        <action id="0" name="Set text" sid="2163389265535791" type="text_OP">
-                            <param id="0" name="Text">&quot;current: &quot; &amp; param_cur &amp; &quot; - min: &quot; &amp; param_min &amp; &quot; - max: &quot; &amp; param_max</param>
+                        <action id="0" name="Set text" sid="7590058982415196" type="LogView">
+                            <param id="0" name="Text">LogView.Text &amp; param_content &amp; newline</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="934619161574787">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="767926907965730" type="Function">
+                                    <param id="0" name="Index">1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="438872444401810" type="LogView">
+                                    <param id="0" name="Text">LogView.Text &amp; replace(zeropad(0, 40), &quot;0&quot;, &quot;-&quot;) &amp; newline</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="446140083255778">
+                            <conditions />
+                            <actions>
+                                <action id="9" name="Scroll to bottom" sid="8981316453915297" type="LogView" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="7819971720175121" title="function log (string content) : void">
-            <sub-events>
                 <event-block sid="5617747672934366">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="7371116281641302" type="System" />
@@ -184,24 +171,6 @@
                             <param id="0" name="Property name">&quot;border&quot;</param>
                             <param id="1" name="Value">&quot;1px solid #aaa&quot;</param>
                         </action>
-                    </actions>
-                </event-block>
-                <variable constant="0" name="param_content" sid="1233375409311435" static="0" type="text"></variable>
-                <event-block sid="3641326480045377">
-                    <conditions>
-                        <condition id="0" name="On function" sid="5579195198732919" type="Function">
-                            <param id="0" name="Name">&quot;log&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="8844829487965363" type="System">
-                            <param id="0" name="Variable">param_content</param>
-                            <param id="1" name="Value">Function.Param(0)</param>
-                        </action>
-                        <action id="0" name="Set text" sid="7590058982415196" type="LogView">
-                            <param id="0" name="Text">LogView.Text &amp; param_content &amp; newline</param>
-                        </action>
-                        <action id="9" name="Scroll to bottom" sid="8981316453915297" type="LogView" />
                     </actions>
                 </event-block>
             </sub-events>

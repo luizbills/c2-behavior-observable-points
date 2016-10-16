@@ -145,68 +145,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Bullet" uid="11">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Bullet">
-                            <properties>
-                                <speed>400</speed>
-                                <acceleration>0</acceleration>
-                                <gravity>500</gravity>
-                                <bounce-off-solids>Yes</bounce-off-solids>
-                                <set-angle>Yes</set-angle>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Timer" />
-                        <behavior-instance type="Wrap">
-                            <properties>
-                                <wrap-to>Viewport</wrap-to>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>101</x>
-                        <y>-45</y>
-                        <z>0</z>
-                        <width>14.385534286</width>
-                        <height>10.462206841</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="SpriteMouse" uid="15">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>48</x>
-                        <y>-50</y>
-                        <z>0</z>
-                        <width>18</width>
-                        <height>18</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="text_OP" uid="17">
                     <properties>
                         <text></text>
@@ -242,7 +180,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <behavior-instances>
-                        <behavior-instance type="PlatformX">
+                        <behavior-instance type="Platform">
                             <properties>
                                 <max-speed>330</max-speed>
                                 <acceleration>1500</acceleration>
@@ -267,12 +205,12 @@
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="Timer" />
-                        <behavior-instance type="HitPoints">
+                        <behavior-instance type="ObservablePoints">
                             <properties>
-                                <initial-value>50</initial-value>
+                                <initial-value>25</initial-value>
                                 <initial-value-mode>Percent</initial-value-mode>
-                                <min-value>0.1</min-value>
-                                <max-value>0.5</max-value>
+                                <min-value>0</min-value>
+                                <max-value>8500</max-value>
                                 <enable-min--max>Both</enable-min--max>
                             </properties>
                         </behavior-instance>
@@ -280,8 +218,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>426</x>
-                        <y>177</y>
+                        <x>431</x>
+                        <y>193</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
