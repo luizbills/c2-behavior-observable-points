@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>OP test</name>
+    <events>
+        <variable constant="0" name="defaullt_initial_cur" sid="1177129974635019" static="0" type="number">0</variable>
+        <variable constant="0" name="defaullt_initial_min" sid="1268575474560204" static="0" type="number">0</variable>
+        <variable constant="0" name="defaullt_initial_max" sid="4052059678445824" static="0" type="number">0</variable>
+        <event-block sid="3808485175705828">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="2583647324939092" type="System">
+                    <param id="0" name="Interval (seconds)">0.2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="3409759565711509" type="Function">
+                    <param id="0" name="Name">&quot;updateOPText&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="710537044795448">
+            <conditions>
+                <condition behavior="HitPoints" id="1" name="On value change" sid="4636334697602053" type="Player">
+                    <param id="0" name="Attribute">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="6627580338899634" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">Player.HitPoints.TriggerAction &amp; &quot;: &quot; &amp; Player.HitPoints.TriggerValue</param>
+                </action>
+                <action id="0" name="Call function" sid="9151057382716869" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;attribute: &quot; &amp; Player.HitPoints.TriggerAttribute</param>
+                </action>
+                <action id="0" name="Call function" sid="9038825933330107" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;changed: &quot; &amp; Player.HitPoints.ChangedValue</param>
+                </action>
+                <action id="0" name="Call function" sid="1289146845877329" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;tag: &quot; &amp; Player.HitPoints.TriggerTag</param>
+                </action>
+                <action id="0" name="Call function" sid="9415181345966712" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;----------&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6641629609187445">
+            <conditions>
+                <condition behavior="HitPoints" id="1" name="On value change" sid="3928644804218349" type="Player">
+                    <param id="0" name="Attribute">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="6894799686991352" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">Player.HitPoints.TriggerAction &amp; &quot;: &quot; &amp; Player.HitPoints.TriggerValue</param>
+                </action>
+                <action id="0" name="Call function" sid="6261494896576229" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;attribute: &quot; &amp; Player.HitPoints.TriggerAttribute</param>
+                </action>
+                <action id="0" name="Call function" sid="7556689987596317" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;changed: &quot; &amp; Player.HitPoints.ChangedValue</param>
+                </action>
+                <action id="0" name="Call function" sid="6817474114645668" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;tag: &quot; &amp; Player.HitPoints.TriggerTag</param>
+                </action>
+                <action id="0" name="Call function" sid="6018821687774198" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;----------&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7928996639145909">
+            <conditions>
+                <condition behavior="HitPoints" id="1" name="On value change" sid="115750204000498" type="Player">
+                    <param id="0" name="Attribute">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="8137676788814761" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">Player.HitPoints.TriggerAction &amp; &quot;: &quot; &amp; Player.HitPoints.TriggerValue</param>
+                </action>
+                <action id="0" name="Call function" sid="2106995495417199" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;attribute: &quot; &amp; Player.HitPoints.TriggerAttribute</param>
+                </action>
+                <action id="0" name="Call function" sid="5227766344473889" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;changed: &quot; &amp; Player.HitPoints.ChangedValue</param>
+                </action>
+                <action id="0" name="Call function" sid="7809959576521784" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;tag: &quot; &amp; Player.HitPoints.TriggerTag</param>
+                </action>
+                <action id="0" name="Call function" sid="297873299898388" type="Function">
+                    <param id="0" name="Name">&quot;log&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;----------&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5906958902944954">
+            <conditions>
+                <condition behavior="HitPoints" id="2" name="On value change (with tag)" sid="3167664409577928" type="Player">
+                    <param id="0" name="Attribute">0</param>
+                    <param id="1" name="Tag">&quot;Set_value&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="8962780064764057" type="Player">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action behavior="Timer" id="0" name="Start timer" sid="5070568914441581" type="Player">
+                    <param id="0" name="Duration">0.5</param>
+                    <param id="1" name="Type">0</param>
+                    <param id="2" name="Tag">&quot;change_back&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4444127266712017">
+            <conditions>
+                <condition behavior="HitPoints" id="2" name="On value change (with tag)" sid="2441786712495713" type="Player">
+                    <param id="0" name="Attribute">1</param>
+                    <param id="1" name="Tag">&quot;Set_value&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="4307538799643104" type="Player">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action behavior="Timer" id="0" name="Start timer" sid="6921080190193035" type="Player">
+                    <param id="0" name="Duration">0.5</param>
+                    <param id="1" name="Type">0</param>
+                    <param id="2" name="Tag">&quot;change_back&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3515776480822955">
+            <conditions>
+                <condition behavior="HitPoints" id="2" name="On value change (with tag)" sid="9516668709699423" type="Player">
+                    <param id="0" name="Attribute">2</param>
+                    <param id="1" name="Tag">&quot;Set_value&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="8393152823903667" type="Player">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action behavior="Timer" id="0" name="Start timer" sid="4799410302571192" type="Player">
+                    <param id="0" name="Duration">0.5</param>
+                    <param id="1" name="Type">0</param>
+                    <param id="2" name="Tag">&quot;change_back&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7952008357347905">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="4254225359492959" type="Player">
+                    <param id="0" name="Tag">&quot;change_back&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="7211773437226999" type="Player">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="355609085110233">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="8780416699334803" type="Keyboard">
+                    <param id="0" name="Key">49 (1)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="HitPoints" id="0" name="Set value" sid="9475318926668861" type="Player">
+                    <param id="0" name="Attribute">0</param>
+                    <param id="1" name="Value">Function.Call(&quot;randomInt&quot;, 1, 50)</param>
+                    <param id="2" name="Tag">&quot;set_value&quot;</param>
+                    <param id="3" name="Trigger this change">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4883068038625918">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="6926255127106642" type="Keyboard">
+                    <param id="0" name="Key">50 (2)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="HitPoints" id="1" name="Add" sid="8468096037898368" type="Player">
+                    <param id="0" name="Attribute">0</param>
+                    <param id="1" name="Value">Function.Call(&quot;randomInt&quot;, 1, 50)</param>
+                    <param id="2" name="Tag">&quot;&quot;</param>
+                    <param id="3" name="Trigger this change">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4734496577741948">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="5673094945413327" type="Keyboard">
+                    <param id="0" name="Key">51 (3)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="HitPoints" id="2" name="Subtract" sid="8427917732858922" type="Player">
+                    <param id="0" name="Attribute">0</param>
+                    <param id="1" name="Value">Function.Call(&quot;randomInt&quot;, 1, 50)</param>
+                    <param id="2" name="Tag">&quot;&quot;</param>
+                    <param id="3" name="Trigger this change">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3516933532330872">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="7565784303240097" type="Keyboard">
+                    <param id="0" name="Key">52 (4)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="HitPoints" id="0" name="Set value" sid="2076887142547765" type="Player">
+                    <param id="0" name="Attribute">1</param>
+                    <param id="1" name="Value">Function.Call(&quot;randomInt&quot;, 1, 50)</param>
+                    <param id="2" name="Tag">&quot;set_value&quot;</param>
+                    <param id="3" name="Trigger this change">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5946583568146022">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="5190423427930641" type="Keyboard">
+                    <param id="0" name="Key">53 (5)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="HitPoints" id="1" name="Add" sid="3825987230792112" type="Player">
+                    <param id="0" name="Attribute">1</param>
+                    <param id="1" name="Value">Function.Call(&quot;randomInt&quot;, 1, 50)</param>
+                    <param id="2" name="Tag">&quot;&quot;</param>
+                    <param id="3" name="Trigger this change">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1231454624862532">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="9369959554978329" type="Keyboard">
+                    <param id="0" name="Key">54 (6)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="HitPoints" id="2" name="Subtract" sid="5256107247230836" type="Player">
+                    <param id="0" name="Attribute">1</param>
+                    <param id="1" name="Value">Function.Call(&quot;randomInt&quot;, 1, 50)</param>
+                    <param id="2" name="Tag">&quot;&quot;</param>
+                    <param id="3" name="Trigger this change">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9046380184835743">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="3050517877195485" type="Keyboard">
+                    <param id="0" name="Key">55 (7)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="HitPoints" id="0" name="Set value" sid="8830417866371051" type="Player">
+                    <param id="0" name="Attribute">2</param>
+                    <param id="1" name="Value">Function.Call(&quot;randomInt&quot;, 1, 50)</param>
+                    <param id="2" name="Tag">&quot;set_value&quot;</param>
+                    <param id="3" name="Trigger this change">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1872592907086375">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="3131599776429331" type="Keyboard">
+                    <param id="0" name="Key">56 (8)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="HitPoints" id="1" name="Add" sid="7661707150776548" type="Player">
+                    <param id="0" name="Attribute">2</param>
+                    <param id="1" name="Value">Function.Call(&quot;randomInt&quot;, 1, 50)</param>
+                    <param id="2" name="Tag">&quot;&quot;</param>
+                    <param id="3" name="Trigger this change">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4330263967742094">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="8929091887616696" type="Keyboard">
+                    <param id="0" name="Key">57 (9)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="HitPoints" id="2" name="Subtract" sid="9084952644322181" type="Player">
+                    <param id="0" name="Attribute">2</param>
+                    <param id="1" name="Value">Function.Call(&quot;randomInt&quot;, 1, 50)</param>
+                    <param id="2" name="Tag">&quot;&quot;</param>
+                    <param id="3" name="Trigger this change">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6419682133749002">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="4472001271560758" type="Keyboard">
+                    <param id="0" name="Key">90 (Z)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="HitPoints" id="3" name="Set applying value changes" sid="7222224094011546" type="Player">
+                    <param id="0" name="Value changes">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5474618655662664">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="2076228853154159" type="Keyboard">
+                    <param id="0" name="Key">88 (X)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="HitPoints" id="3" name="Set applying value changes" sid="9696843600461635" type="Player">
+                    <param id="0" name="Value changes">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9592547224949365">
+            <conditions>
+                <condition behavior="HitPoints" id="4" name="On set applying value changes" sid="6690933219462254" type="Player">
+                    <param id="0" name="Value changes">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="4875071675060782" type="Player">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="4813093679285226">
+                    <conditions>
+                        <condition behavior="HitPoints" id="0" name="Compare value" sid="4967220768985107" type="Player">
+                            <param id="0" name="Attribute">2</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">9000</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="9339796522507294" type="Function">
+                            <param id="0" name="Name">&quot;log&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;SUCH STRONG!&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="7614960559162006" type="Function">
+                            <param id="0" name="Name">&quot;log&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;----------&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3559358073536698">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="1422508441446258" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="2161635186570511" type="Function">
+                            <param id="0" name="Name">&quot;log&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;LOOSER!&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="5855408109498824" type="Function">
+                            <param id="0" name="Name">&quot;log&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;----------&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7484161496581764">
+            <conditions>
+                <condition behavior="HitPoints" id="4" name="On set applying value changes" sid="1981832778281827" type="Player">
+                    <param id="0" name="Value changes">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="3765973074488588" type="Player">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>return all values to the default (to test changes without emit triggers)</comment>
+        <event-block sid="8690051163280292">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="7305235850981938" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="5419556309842214" type="System">
+                    <param id="0" name="Variable">defaullt_initial_cur</param>
+                    <param id="1" name="Value">Player.HitPoints.CurrentValue</param>
+                </action>
+                <action id="-9" name="Set value" sid="7700507092132726" type="System">
+                    <param id="0" name="Variable">defaullt_initial_min</param>
+                    <param id="1" name="Value">Player.HitPoints.MinValue</param>
+                </action>
+                <action id="-9" name="Set value" sid="9592704825637418" type="System">
+                    <param id="0" name="Variable">defaullt_initial_max</param>
+                    <param id="1" name="Value">Player.HitPoints.MaxValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2982140150634379">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="7462874903867392" type="Keyboard">
+                    <param id="0" name="Key">48 (0)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="HitPoints" id="0" name="Set value" sid="8029227144102225" type="Player">
+                    <param id="0" name="Attribute">1</param>
+                    <param id="1" name="Value">defaullt_initial_min</param>
+                    <param id="2" name="Tag">&quot;set_value&quot;</param>
+                    <param id="3" name="Trigger this change">1</param>
+                </action>
+                <action behavior="HitPoints" id="0" name="Set value" sid="133652589693036" type="Player">
+                    <param id="0" name="Attribute">2</param>
+                    <param id="1" name="Value">defaullt_initial_max</param>
+                    <param id="2" name="Tag">&quot;set_value&quot;</param>
+                    <param id="3" name="Trigger this change">1</param>
+                </action>
+                <action behavior="HitPoints" id="0" name="Set value" sid="4788987350207774" type="Player">
+                    <param id="0" name="Attribute">0</param>
+                    <param id="1" name="Value">defaullt_initial_cur</param>
+                    <param id="2" name="Tag">&quot;set_value&quot;</param>
+                    <param id="3" name="Trigger this change">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

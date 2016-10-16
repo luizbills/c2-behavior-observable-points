@@ -4,6 +4,6 @@
     <name>Event sheet 1</name>
     <events>
         <include>Basic</include>
-        <include>OP Test (Current)</include>
+        <include>OP test</include>
     </events>
 </c2eventsheet>

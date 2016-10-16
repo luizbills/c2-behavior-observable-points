@@ -8,8 +8,8 @@
         <height>960</height>
     </size>
     <margins>
-        <horizontal>500</horizontal>
-        <vertical>500</vertical>
+        <horizontal>100</horizontal>
+        <vertical>100</vertical>
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
@@ -46,7 +46,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>212</x>
+                        <x>196</x>
                         <y>345</y>
                         <z>0</z>
                         <width>440</width>
@@ -75,8 +75,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>804</x>
-                        <y>226</y>
+                        <x>736</x>
+                        <y>224</y>
                         <z>0</z>
                         <width>181</width>
                         <height>25</height>
@@ -173,8 +173,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>83</x>
-                        <y>-53</y>
+                        <x>101</x>
+                        <y>-45</y>
                         <z>0</z>
                         <width>14.385534286</width>
                         <height>10.462206841</height>
@@ -225,8 +225,8 @@
                         <x>5</x>
                         <y>5</y>
                         <z>0</z>
-                        <width>506</width>
-                        <height>30</height>
+                        <width>448</width>
+                        <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -269,10 +269,10 @@
                         <behavior-instance type="Timer" />
                         <behavior-instance type="HitPoints">
                             <properties>
-                                <initial-value>100</initial-value>
+                                <initial-value>50</initial-value>
                                 <initial-value-mode>Percent</initial-value-mode>
-                                <min-value>0</min-value>
-                                <max-value>8000</max-value>
+                                <min-value>0.5</min-value>
+                                <max-value>0.6</max-value>
                                 <enable-min--max>Both</enable-min--max>
                             </properties>
                         </behavior-instance>
@@ -318,7 +318,7 @@
                         <hotspotY>0</hotspotY>
                     </world>
                 </instance>
-                <instance type="text_FPS" uid="4">
+                <instance type="text_FPS" uid="10">
                     <properties>
                         <text></text>
                         <initial-visibility>Visible</initial-visibility>
@@ -333,7 +333,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>540</x>
+                        <x>481</x>
                         <y>5</y>
                         <z>0</z>
                         <width>309</width>
