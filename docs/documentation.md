@@ -29,6 +29,8 @@ Triggered when a attribute value is changed using *any* tag.
 
 Triggered when a attribute value is changed using a *determined* tag.
 
+> Note: Tags are case insensitive.
+
 ### Is applying changes
 
 True when is applying value changes (in any attributte).

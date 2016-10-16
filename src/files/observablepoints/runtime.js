@@ -8,9 +8,9 @@ cr.behaviors.ObservablePoints = function(runtime) {
 	this.runtime = runtime;
 };
 
-(function (cr_behavior_ObservablePoints, Math, undef) {
+(function (cr, Math, undef) {
 	var
-		behaviorProto = cr_behavior_ObservablePoints.prototype,
+		behaviorProto = cr.behaviors.ObservablePoints.prototype,
 
 		// instance attributes names
 		ATTRIBUTE_NAME = [
@@ -73,6 +73,8 @@ cr.behaviors.ObservablePoints = function(runtime) {
 	var instanceProto = behaviorProto.Instance.prototype;
 
 	instanceProto.onCreate = function () {
+		var infinity = Infinity;
+
 		this._initialValue = this.properties[0];
 		this._initialValueMode = this.properties[1];
 		this._minValue = this.properties[2];
@@ -92,22 +94,22 @@ cr.behaviors.ObservablePoints = function(runtime) {
 			case BOTH:
 				break;
 			case ONLY_MIN:
-				this._maxValue = Infinity;
+				this._maxValue = infinity;
 				break;
 			case ONLY_MAX:
-				this._minValue = -Infinity;
+				this._minValue = -infinity;
 				break;
 			case NONE:
 			default:
-				this._minValue = -Infinity;
-				this._maxValue = Infinity;
+				this._minValue = -infinity;
+				this._maxValue = infinity;
 				break;
 		}
 
 		if (this._initialValueMode === PERCENT) {
 			/**BEGIN-PREVIEWONLY**/
 			assert2(
-				Number.isFinite(this._maxValue),
+				this._maxValue !== infinity,
 				'[Behavior Observable Points] error: you can not use *Percent* in property "Initial value mode" with "Max value" enabled. Please change the property "Enable min & max" to *Only max* or *Both*.'
 			);
 			/**END-PREVIEWONLY**/
@@ -213,7 +215,7 @@ cr.behaviors.ObservablePoints = function(runtime) {
 	};
 
 	conditionsProto.IsApplyingChanges = function () {
-		return this._applyingChangesCounter < 1;
+		return this._applyingChangesCounter === 0;
 	};
 
 	conditionsProto.OnSetApplyChanges = function (applying) {
@@ -265,7 +267,7 @@ cr.behaviors.ObservablePoints = function(runtime) {
 		}
 
 		// aplly change if this instance is currently "applying changes"
-		if (this._applyingChangesCounter < 1) {
+		if (this._applyingChangesCounter === 0) {
 			this[attr] = newValue;
 			if (attr_index !== CURRENT_VALUE) {
 				this._currentValue = cr.clamp(this._currentValue, this._minValue, this._maxValue);
@@ -302,23 +304,23 @@ cr.behaviors.ObservablePoints = function(runtime) {
 	};
 
 	actionsProto.SetApplyChanges = function (applying) {
+		var counter,
+			old = this._applyingChangesCounter;
+
 		if (applying === 0) {
-			this._applyingChangesCounter++;
-			if (this._applyingChangesCounter === 1) {
-				this.runtime.trigger(behaviorProto.cnds.OnSetApplyChanges, this.inst);
-			}
+			counter = ++this._applyingChangesCounter;
 		} else {
-			this._applyingChangesCounter--;
-			if (this._applyingChangesCounter === 0) {
-				this.runtime.trigger(behaviorProto.cnds.OnSetApplyChanges, this.inst);
-			}
+			counter = --this._applyingChangesCounter;
 			/**BEGIN-PREVIEWONLY**/
-			if (this._applyingChangesCounter < 0) {
-				var msg = '[Behavior Observable Points] warning: you are using the "Stop applying changes" more than "Start applying changes" in the ' + this.type.name + ' (use the debugger and check the "Applying Changes Counter").';
-				if (console.warn) console.warn(msg);
-				else console.log(msg);
-			}
+			assert2(
+				counter >= 0,
+				'[Behavior Observable Points] warning: you are using the "Stop applying changes" more than "Start applying changes" in a ' + this.type.name + ' (use the debugger and check the "Applying Changes Counter").'
+			);
 			/**END-PREVIEWONLY**/
+		}
+
+		if ((counter === 0 && (old - 1) === 0) || (counter === 1 && (old + 1) === 1)) {
+			this.runtime.trigger(behaviorProto.cnds.OnSetApplyChanges, this.inst);
 		}
 	};
 
@@ -392,4 +394,4 @@ cr.behaviors.ObservablePoints = function(runtime) {
 	};
 
 	behaviorProto.exps = new Expressions();
-})(cr.behaviors.ObservablePoints, Math);
+})(cr, Math);
