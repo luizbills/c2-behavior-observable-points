@@ -8,7 +8,7 @@ cr.behaviors.ObservablePoints = function(runtime) {
 	this.runtime = runtime;
 };
 
-(function (cr_behavior_ObservablePoints, undef) {
+(function (cr_behavior_ObservablePoints, Math, undef) {
 	var
 		behaviorProto = cr_behavior_ObservablePoints.prototype,
 
@@ -23,6 +23,9 @@ cr.behaviors.ObservablePoints = function(runtime) {
 			'minimum', // 1
 			'maximum' // 2
 		],
+		CURRENT_VALUE = 0,
+		MIN_VALUE = 1,
+		MAX_VALUE = 2,
 
 		// options of 'Enable Min & Max' property
 		BOTH = 0,
@@ -111,6 +114,7 @@ cr.behaviors.ObservablePoints = function(runtime) {
 			this._initialValue = this._maxValue * (cr.clamp(this._initialValue, 0, 100) / 100);
 		}
 
+		// set correct initial value
 		this._currentValue = cr.clamp(this._initialValue, this._minValue, this._maxValue);
 	};
 
@@ -230,10 +234,7 @@ cr.behaviors.ObservablePoints = function(runtime) {
 			oldValue = this[attr],
 			newValue = oldValue,
 
-			YES = 0,
-			CURRENT_VALUE = 0,
-			MIN_VALUE = 1,
-			MAX_VALUE = 2;
+			YES = 0;
 
 		switch (action) {
 			case ACTION_SET:
@@ -254,10 +255,10 @@ cr.behaviors.ObservablePoints = function(runtime) {
 				newValue = cr.clamp(newValue, this._minValue, this._maxValue);
 				break;
 			case MIN_VALUE:
-				newValue = Math.min(newValue, this._maxValue - 1);
+				newValue = newValue < this._maxValue ? newValue : Math.min(newValue, this._maxValue - 1);
 				break;
 			case MAX_VALUE:
-				newValue = Math.max(newValue, this._minValue + 1);
+				newValue = newValue > this._minValue ? newValue : Math.max(newValue, this._minValue + 1);
 				break;
 			default:
 				break;
@@ -391,4 +392,4 @@ cr.behaviors.ObservablePoints = function(runtime) {
 	};
 
 	behaviorProto.exps = new Expressions();
-})(cr.behaviors.ObservablePoints);
+})(cr.behaviors.ObservablePoints, Math);
