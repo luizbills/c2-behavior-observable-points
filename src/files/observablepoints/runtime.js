@@ -186,13 +186,13 @@ cr.behaviors.ObservablePoints = function(runtime) {
 		},
 		DEBUGGER_TAG = 'debug-edit';
 
-	instanceProto.onDebugValueEdited = function (header, name, value) {
-		behaviorProto.acts.SetValue(DEBUGGER_ATTRIBUTE_INDEX_BY_NAME[name], value, DEBUGGER_TAG, true);
+	instanceProto.onDebugValueEdited = function (title, propName, propValue) {
+		behaviorProto.acts.SetValue(DEBUGGER_ATTRIBUTE_INDEX_BY_NAME[propName], propValue, DEBUGGER_TAG, true);
 	};
 	/**END-PREVIEWONLY**/
 
 	/// Conditions class
-	function Conditions() {};
+	function Conditions() {}
 
 	var conditionsProto = Conditions.prototype;
 
@@ -210,19 +210,19 @@ cr.behaviors.ObservablePoints = function(runtime) {
 
 	conditionsProto.IsApplyingChanges = function () {
 		return this._applyingChangesCounter < 1;
-	}
+	};
 
 	conditionsProto.OnSetApplyChanges = function (applying) {
 		return (applying === 0 && this._applyingChangesCounter === 1)
 			|| (applying === 1 && this._applyingChangesCounter === 0);
-	}
+	};
 
 	behaviorProto.cnds = new Conditions();
 
 	/// Actions class
-	function Actions() {};
+	function Actions() {}
 
-	var actsProto = Actions.prototype;
+	var actionsProto = Actions.prototype;
 
 	function _modValue (attr, value, tag, emit, action) {
 		var attr_index = attr,
@@ -251,7 +251,7 @@ cr.behaviors.ObservablePoints = function(runtime) {
 
 		switch (attr_index) {
 			case CURRENT_VALUE:
-				newValue = cr.clamp(newValue, this._minValue, this._maxValue)
+				newValue = cr.clamp(newValue, this._minValue, this._maxValue);
 				break;
 			case MIN_VALUE:
 				newValue = Math.min(newValue, this._maxValue - 1);
@@ -265,9 +265,9 @@ cr.behaviors.ObservablePoints = function(runtime) {
 
 		// aplly change if this instance is currently "applying changes"
 		if (this._applyingChangesCounter < 1) {
-			this[attr] = newValue
+			this[attr] = newValue;
 			if (attr_index !== CURRENT_VALUE) {
-				this._currentValue = cr.clamp(this._currentValue, this._minValue, this._maxValue)
+				this._currentValue = cr.clamp(this._currentValue, this._minValue, this._maxValue);
 			}
 		}
 
@@ -288,19 +288,19 @@ cr.behaviors.ObservablePoints = function(runtime) {
 		}
 	};
 
-	actsProto.SetValue = function (attr, value, tag, emit) {
+	actionsProto.SetValue = function (attr, value, tag, emit) {
 		_modValue.call(this, attr, value, tag, emit, ACTION_SET);
 	};
 
-	actsProto.AddValue = function (attr, value, tag, emit) {
+	actionsProto.AddValue = function (attr, value, tag, emit) {
 		_modValue.call(this, attr, value, tag, emit, ACTION_ADD);
 	};
 
-	actsProto.SubtractValue = function (attr, value, tag, emit) {
+	actionsProto.SubtractValue = function (attr, value, tag, emit) {
 		_modValue.call(this, attr, value, tag, emit, ACTION_SUBTRACT);
 	};
 
-	actsProto.SetApplyChanges = function (applying) {
+	actionsProto.SetApplyChanges = function (applying) {
 		if (applying === 0) {
 			this._applyingChangesCounter++;
 			if (this._applyingChangesCounter === 1) {
@@ -324,23 +324,23 @@ cr.behaviors.ObservablePoints = function(runtime) {
 	behaviorProto.acts = new Actions();
 
 	/// Expressions
-	function Expressions() {};
+	function Expressions() {}
 
-	var expsProto = Expressions.prototype
+	var expressionsProto = Expressions.prototype;
 
-	expsProto.CurrentValue = function (ret) {
+	expressionsProto.CurrentValue = function (ret) {
 		ret.set_float(this._currentValue);
 	};
 
-	expsProto.MinValue = function (ret) {
+	expressionsProto.MinValue = function (ret) {
 		ret.set_float(this._minValue);
 	};
 
-	expsProto.MaxValue = function (ret) {
+	expressionsProto.MaxValue = function (ret) {
 		ret.set_float(this._maxValue);
 	};
 
-	expsProto.ChangedValue = function (ret) {
+	expressionsProto.ChangedValue = function (ret) {
 		/**BEGIN-PREVIEWONLY**/
 		assert2(
 			this._isOnTrigger,
@@ -350,7 +350,7 @@ cr.behaviors.ObservablePoints = function(runtime) {
 		ret.set_float(this._changedValue);
 	};
 
-	expsProto.TriggerValue = function (ret) {
+	expressionsProto.TriggerValue = function (ret) {
 		/**BEGIN-PREVIEWONLY**/
 		assert2(
 			this._isOnTrigger,
@@ -360,7 +360,7 @@ cr.behaviors.ObservablePoints = function(runtime) {
 		ret.set_float(this._triggerValue);
 	};
 
-	expsProto.TriggerTag = function (ret) {
+	expressionsProto.TriggerTag = function (ret) {
 		/**BEGIN-PREVIEWONLY**/
 		assert2(
 			this._isOnTrigger,
@@ -370,7 +370,7 @@ cr.behaviors.ObservablePoints = function(runtime) {
 		ret.set_string(this._triggerTag);
 	};
 
-	expsProto.TriggerAttribute = function (ret) {
+	expressionsProto.TriggerAttribute = function (ret) {
 		/**BEGIN-PREVIEWONLY**/
 		assert2(
 			this._isOnTrigger,
@@ -380,7 +380,7 @@ cr.behaviors.ObservablePoints = function(runtime) {
 		ret.set_string(ATTRIBUTE_NAME_EXPRESSION[this._triggerAttribute]);
 	};
 
-	expsProto.TriggerAction = function (ret) {
+	expressionsProto.TriggerAction = function (ret) {
 		/**BEGIN-PREVIEWONLY**/
 		assert2(
 			this._isOnTrigger,
