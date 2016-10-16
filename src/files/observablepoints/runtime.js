@@ -179,14 +179,15 @@ cr.behaviors.ObservablePoints = function(runtime) {
 		});
 	};
 
-	var debug_attrs = {
-		'Current Value': 0,
-		'Min Value': 1,
-		'Max Value': 2
-	};
+	var DEBUGGER_ATTRIBUTE_INDEX_BY_NAME = {
+			'Current Value': 0,
+			'Min Value': 1,
+			'Max Value': 2
+		},
+		DEBUGGER_TAG = 'debug-edit';
 
 	instanceProto.onDebugValueEdited = function (header, name, value) {
-		behaviorProto.acts.SetValue(debug_attrs[name], value, 'debug_edit', true);
+		behaviorProto.acts.SetValue(DEBUGGER_ATTRIBUTE_INDEX_BY_NAME[name], value, DEBUGGER_TAG, true);
 	};
 	/**END-PREVIEWONLY**/
 
