@@ -25,12 +25,14 @@ AddCondition(uid++, cf_none, "Compare value", "", "<i>{0}</i> of {my} {1} <i>{2}
 AddComboParamOption("Current value");
 AddComboParamOption("Min value");
 AddComboParamOption("Max value");
+AddComboParamOption("Any value");
 AddComboParam("Attribute", "the attribute to observe changes.");
 AddCondition(uid++, cf_trigger, "On value change", "", "On {my} <b>{0}</b> changed", "Triggered when a attribute value of this observable points is changed using any tag.", "OnValueChange");
 
 AddComboParamOption("Current value");
 AddComboParamOption("Min value");
 AddComboParamOption("Max value");
+AddComboParamOption("Any value");
 AddComboParam("Attribute", "the attribute to observe changes.");
 AddStringParam("Tag", "Enter the name this change.");
 AddCondition(uid++, cf_trigger, "On value change (with tag)", "", "On {my} <b>{0}</b> changed (tag: <i>{1}</i>)", "Triggered when a attribute value is changed using a determined tag.", "OnValueChangeWithTag");

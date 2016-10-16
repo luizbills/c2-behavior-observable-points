@@ -18,14 +18,17 @@ cr.behaviors.ObservablePoints = function(runtime) {
 			'_minValue', // 1
 			'_maxValue' // 2
 		],
+
 		ATTRIBUTE_NAME_EXPRESSION = [
 			'current', // 0
 			'minimum', // 1
 			'maximum' // 2
 		],
+
 		CURRENT_VALUE = 0,
 		MIN_VALUE = 1,
 		MAX_VALUE = 2,
+		ANY_VALUE = 3,
 
 		// options of 'Enable Min & Max' property
 		BOTH = 0,
@@ -207,11 +210,11 @@ cr.behaviors.ObservablePoints = function(runtime) {
 	};
 
 	conditionsProto.OnValueChange = function (attr) {
-		return this._triggerAttribute === attr;
+		return this._triggerAttribute === attr || attr === ANY_VALUE;
 	};
 
 	conditionsProto.OnValueChangeWithTag = function (attr, tag) {
-		return this._triggerAttribute === attr && cr.equals_nocase(this._triggerTag, tag);
+		return (this._triggerAttribute === attr || attr === ANY_VALUE) && cr.equals_nocase(this._triggerTag, tag);
 	};
 
 	conditionsProto.IsApplyingChanges = function () {
