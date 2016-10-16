@@ -20,7 +20,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
-        <behavior author='Luiz P. &quot;Bills&quot;' id="ObservablePoints" version="0.100000001">Observable Points</behavior>
+        <behavior author="Luiz P. Bills" id="ObservablePoints" version="0.100000001">Observable Points</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>

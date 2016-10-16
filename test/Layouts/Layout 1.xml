@@ -271,8 +271,8 @@
                             <properties>
                                 <initial-value>50</initial-value>
                                 <initial-value-mode>Percent</initial-value-mode>
-                                <min-value>0.5</min-value>
-                                <max-value>0.6</max-value>
+                                <min-value>0.1</min-value>
+                                <max-value>0.5</max-value>
                                 <enable-min--max>Both</enable-min--max>
                             </properties>
                         </behavior-instance>

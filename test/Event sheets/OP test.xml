@@ -422,13 +422,13 @@
                     <param id="0" name="Attribute">1</param>
                     <param id="1" name="Value">defaullt_initial_min</param>
                     <param id="2" name="Tag">&quot;set_value&quot;</param>
-                    <param id="3" name="Trigger this change">1</param>
+                    <param id="3" name="Trigger this change">0</param>
                 </action>
                 <action behavior="HitPoints" id="0" name="Set value" sid="133652589693036" type="Player">
                     <param id="0" name="Attribute">2</param>
                     <param id="1" name="Value">defaullt_initial_max</param>
                     <param id="2" name="Tag">&quot;set_value&quot;</param>
-                    <param id="3" name="Trigger this change">1</param>
+                    <param id="3" name="Trigger this change">0</param>
                 </action>
                 <action behavior="HitPoints" id="0" name="Set value" sid="4788987350207774" type="Player">
                     <param id="0" name="Attribute">0</param>
