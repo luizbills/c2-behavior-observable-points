@@ -13,7 +13,7 @@ Download the [latest version of the behavior](https://github.com/luizbills/c2-be
 
 ## Documentation
 
-Read the [documentation](https://github.com/luizbills/c2-behavior-observable-points/tree/master/docs) or clone this repository and open *our project used for tests* inside of folder `test` (you must install the addon first).
+Read the [documentation](https://github.com/luizbills/c2-behavior-observable-points/blob/master/docs/documentation.md) or clone this repository and open *our project used for tests* inside of folder `test` (you must install the addon first).
 
 ## LICENSE
 
