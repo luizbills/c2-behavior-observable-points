@@ -1,4 +1,4 @@
-![Plugin Icon](http://127.0.0.1:8080/PluginIcon-64x64.png)
+![Plugin Icon](https://github.com/luizbills/c2-behavior-observable-points/blob/master/assets/PluginIcon-64x64.png?raw=true)
 # Observable Points Documentation
 
 ## About the attributes
